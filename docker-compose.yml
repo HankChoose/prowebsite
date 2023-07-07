@@ -1,0 +1,58 @@
+version: '3'
+services:
+  projectwebsite1:
+    build: 
+      context: ./projectwebsite1
+      dockerfile: Dockerfile
+      #target: development   name as form Dockerfile
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - ./projectwebsite1:/projectwebsite1
+      - app_static:/projectwebsite1/static
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+    environment:
+      - DB_HOST=db
+      - DB_NAME=mydb
+      - DB_USER=myuser
+      - DB_PASSWORD=mypw
+    networks:
+      - app-network
+
+  db:
+    image: mysql:latest
+    restart: always
+    environment:
+      MYSQL_DATABASE: mydatabase
+      MYSQL_USER: mydatabaseuser
+      MYSQL_PASSWORD: mydatabasepassword
+      MYSQL_ROOT_PASSWORD: myrootpassword
+    ports:
+      - "3306:3306"
+    volumes:
+      - dbdata:/var/lib/mysql
+    networks:
+      - app-network
+      
+  nginx:
+    image: nginx
+    ports:
+      - 80:80
+      - 443:443
+    volumes:
+      - ./projectwebsite1/nginx.conf:/etc/nginx/nginx.conf
+      - ./ssl:/etc/nginx/ssl
+      - app_static:/app/static:ro
+    depends_on:
+      - projectwebsite1
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
+volumes:
+  dbdata:
+  app_static:

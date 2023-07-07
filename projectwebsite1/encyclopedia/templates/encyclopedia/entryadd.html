@@ -1,0 +1,36 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Encyclopedia
+{% endblock %}
+
+{% block nav %}
+    Navigation
+{% endblock %}
+
+{% block body %}
+   <h1>Add Entry</h1>
+
+
+<form action="{% url 'encyclopedia:entryadd' %}" method="post">
+    {% csrf_token %}
+    <br>
+    <table>
+        <tr>
+            <td>{{ entryFrom.newEentryTitle.label}} </td> 
+            <td>{{ entryFrom.newEentryTitle}}</td> 
+       </tr>
+       <tr>
+            <td>{{ entryFrom.newEentryContent.label}}</td>
+            <td>{{ entryFrom.newEentryContent}}</td>
+        </tr>
+        <tr>
+        <td></td>
+        <td align="right"><input type="submit"></td>
+        </tr>
+    </table>
+    <!-- {{ entryFrom}} -->
+   
+   </form>
+
+{% endblock %}
