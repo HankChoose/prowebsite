@@ -30,6 +30,7 @@ jQuery(function ($) {
             $("#scrolltop").removeClass("scrolltopactive");
         }
     });
+    
     $("#scrolltop").on('click', function () {
         $("html").animate({
             scrollTop: 0
