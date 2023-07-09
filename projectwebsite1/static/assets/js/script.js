@@ -1,7 +1,7 @@
 jQuery(function ($) {
     //var dealCounter1 = 0; // Assign a value to dealCounter1
     'use strict';
-    alert("eee");
+    alert("eee111");
 
     // Mean menu
     jQuery('.mean-menu').meanmenu({
