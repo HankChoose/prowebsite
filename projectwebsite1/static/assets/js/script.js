@@ -1,5 +1,5 @@
 jQuery(function ($) {
-    var dealCounter1 = 0; // Assign a value to dealCounter1
+    //var dealCounter1 = 0; // Assign a value to dealCounter1
     'use strict';
 
     // Mean menu
@@ -30,7 +30,7 @@ jQuery(function ($) {
             $("#scrolltop").removeClass("scrolltopactive");
         }
     });
-    
+
     $("#scrolltop").on('click', function () {
         $("html").animate({
             scrollTop: 0
