@@ -44,7 +44,7 @@ services:
     volumes:
       - ./projectwebsite1/nginx.conf:/etc/nginx/nginx.conf
       - ./ssl:/etc/nginx/ssl
-      - app_static:/app/static:ro
+      - app_static:/app/static
     depends_on:
       - projectwebsite1
     networks:
