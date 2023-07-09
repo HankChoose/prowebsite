@@ -8,7 +8,7 @@ services:
     command: python manage.py runserver 0.0.0.0:8000
     volumes:
       - ./projectwebsite1:/projectwebsite1
-      - app_static:/projectwebsite1/static
+      - app_static:/projectwebsite1/projectwebsite1/static
     ports:
       - "8000:8000"
     depends_on:
