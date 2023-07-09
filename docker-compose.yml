@@ -55,4 +55,4 @@ networks:
     driver: bridge
 volumes:
   dbdata:
-  app_static:
+  app_static1:
