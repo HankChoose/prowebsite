@@ -1,6 +1,6 @@
 jQuery(function ($) {
     'use strict';
-    alert("eee222");
+    #alert("eee222");
 
     // Mean menu
     jQuery('.mean-menu').meanmenu({
