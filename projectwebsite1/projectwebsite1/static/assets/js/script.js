@@ -1,7 +1,6 @@
 jQuery(function ($) {
-    //var dealCounter1 = 0; // Assign a value to dealCounter1
     'use strict';
-    alert("eee111");
+    alert("eee222");
 
     // Mean menu
     jQuery('.mean-menu').meanmenu({
@@ -74,6 +73,7 @@ jQuery(function ($) {
     })
 
     // Daily counter
+    var dealCounter1 = 0; // Assign a value to dealCounter1
     function dailyCounter1() {
         var countDate = new Date("15 October 2022 9:56:00");
         var sec = 1000;
