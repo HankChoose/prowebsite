@@ -5,13 +5,14 @@
 <html lang="zxx">
 
 <head>
+    <title>{% block title %}{% endblock %}</title>
     <meta charset="utf-8">
     <meta name="description" content="Outo">
     <meta name="keywords" content="HTML,CSS,JavaScript">
     <meta name="author" content="EnvyTheme">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-    <title>{% block title %}{% endblock %}</title>
+    
     <link rel="icon" href="{% static 'assets/images/favicon.png' %}" type="image/png" sizes="16x16">
 
     <link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}" type="text/css" media="all" />
@@ -552,12 +553,12 @@
         </div>
     </div>
 
-    
+    <header class="header header-bg-gradient overflow-hidden">
         <div class="container position-relative">
             {% block body %}
             {% endblock %} 
         </div>
-
+    </header>
     
 
     <section class="featured-product-section pb-70">
