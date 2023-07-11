@@ -551,8 +551,14 @@
             </div>
         </div>
     </div>
-    {% block body %}
-    {% endblock %}
+
+    <header class="header header-bg-gradient overflow-hidden">
+        <div class="container position-relative">
+            {% block body %}
+            {% endblock %} 
+        </div>
+    </header>
+    
 
     <section class="featured-product-section pb-70">
         <div class="container">
