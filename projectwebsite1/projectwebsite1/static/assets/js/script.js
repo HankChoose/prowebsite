@@ -30,6 +30,7 @@ jQuery(function ($) {
     });
 
     $("#scrolltop").on('click', function () {
+        alert("zzz");
         $("html").animate({
             scrollTop: 0
         }, 2000);
