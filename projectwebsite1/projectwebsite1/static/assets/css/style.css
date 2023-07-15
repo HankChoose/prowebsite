@@ -1165,6 +1165,7 @@ select.form-control {
           filter: blur(10px) contrast(20);
 }
 
+/*
 .blob-1, .blob-2 {
   width: 70px;
   height: 70px;
@@ -1189,6 +1190,7 @@ select.form-control {
           animation: osc-r 2.5s ease infinite;
   background: #4F5AC2;
 }
+*/
 
 @-webkit-keyframes osc-l {
   0% {
