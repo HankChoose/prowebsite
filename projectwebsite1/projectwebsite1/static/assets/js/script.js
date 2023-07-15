@@ -34,7 +34,7 @@ jQuery(function ($) {
         $("html").animate({
             scrollTop: 0
         }, 2000);
-        return true;
+        return false;
     });
 
     // Language-switcher
