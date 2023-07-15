@@ -1683,6 +1683,10 @@ select.form-control {
   padding-bottom: 0;
 }
 
+.main-nav nav .navbar-nav .nav-item:hover{
+  background-color:#c7c3c34a;
+}
+
 .main-nav nav .navbar-nav .nav-item a {
   color: #555555;
   margin-left: 0;
