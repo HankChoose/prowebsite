@@ -20,7 +20,7 @@ RUN pip3 install markdown2
 #RUN pip install django-sslserver
 RUN apt-get update && apt-get install -y nginx
 
-# Copy to projectwebsite1 folder
+# Copy to backend folder
 COPY . /app/
 COPY ./nginx/nginx.conf /etc/nginx/nginx.conf
 COPY ./nginx/ssl/fullchain.pem /etc/nginx/ssl/fullchain.pem

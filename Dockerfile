@@ -2,12 +2,12 @@
 FROM python:3.9
 
 # Setup work folder
-WORKDIR /projectwebsite1
-ADD requirements.txt /projectwebsite1/
+WORKDIR /backend
+ADD requirements.txt /backend/
 
 # Change work folder
-#RUN mkdir /projectwebsite1
-#WORKDIR /projectwebsite1
+#RUN mkdir /backend
+#WORKDIR /backend
 
 # Install Python dependency
 RUN pip install virtualenv
@@ -20,8 +20,8 @@ RUN pip3 install markdown2
 #RUN pip install django-sslserver
 RUN apt-get update && apt-get install -y nginx
 
-# Copy to projectwebsite1 folder
-COPY . /projectwebsite1/
+# Copy to backend folder
+COPY . /backend/
 COPY nginx.conf /etc/nginx/nginx.conf
 COPY ssl/fullchain.pem /etc/nginx/ssl/fullchain.pem
 COPY ssl/privkey.pem /etc/nginx/ssl/privkey.pem
