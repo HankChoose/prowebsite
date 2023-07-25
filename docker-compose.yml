@@ -47,7 +47,7 @@ services:
       - .nginx/ssl:/etc/nginx/ssl
       - app_static:/app/static
     depends_on:
-      - projectwebsite1
+      - backend
     networks:
       - app-network
 
