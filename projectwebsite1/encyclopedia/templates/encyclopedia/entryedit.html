@@ -1,0 +1,36 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Encyclopedia
+{% endblock %}
+
+{% block nav %}
+    Navigation
+{% endblock %}
+
+{% block body %}
+   <h1>Edit Entry</h1>
+
+
+<form action="{% url 'encyclopedia:entryedit' entryEditFrom.editEentryTitle.value %}" method="post">
+    {% csrf_token %}
+    <br>
+    <table>
+        <tr>
+            <td>{{ entryEditFrom.editEentryTitle.label}} </td> 
+            <td>{{ entryEditFrom.editEentryTitle}}</td> 
+       </tr>
+       <tr>
+            <td>{{ entryEditFrom.editEentryContent.label}}</td>
+            <td>{{ entryEditFrom.editEentryContent}}</td>
+        </tr>
+        <tr>
+        <td></td>
+        <td align="right"><input type="submit"></td>
+        </tr>
+    </table>
+    <!-- {{ entryFrom}} -->
+   
+   </form>
+
+{% endblock %}

@@ -1,14 +1,14 @@
 version: '3'
 services:
-  backend:
+  projectwebsite1:
     build: 
-      context: ./backend
+      context: ./projectwebsite1
       dockerfile: Dockerfile
       #target: development   name as form Dockerfile
     command: python manage.py runserver 0.0.0.0:8000
     volumes:
-      - ./backend:/backend
-      - app_static:/backend/django_app/static
+      - ./projectwebsite1:/projectwebsite1
+      - app_static:/projectwebsite1/projectwebsite1/static
     ports:
       - "8000:8000"
     depends_on:
@@ -25,17 +25,16 @@ services:
     image: mysql:latest
     restart: always
     environment:
-      MYSQL_DATABASE: mydb
-      MYSQL_USER: myuser
-      MYSQL_PASSWORD: mypw
-      MYSQL_ROOT_PASSWORD: myrootpw
+      MYSQL_DATABASE: mydatabase
+      MYSQL_USER: mydatabaseuser
+      MYSQL_PASSWORD: mydatabasepassword
+      MYSQL_ROOT_PASSWORD: myrootpassword
     ports:
       - "3306:3306"
     volumes:
       - dbdata:/var/lib/mysql
     networks:
       - app-network
-    command: ["sh", "-c", "sleep 10 && python manage.py migrate"]
       
   nginx:
     image: nginx
@@ -43,11 +42,11 @@ services:
       - 80:80
       - 443:443
     volumes:
-      - ./backend/nginx/nginx.conf:/etc/nginx/nginx.conf
-      - .backend/nginx/ssl:/etc/nginx/ssl
+      - ./projectwebsite1/nginx.conf:/etc/nginx/nginx.conf
+      - ./ssl:/etc/nginx/ssl
       - app_static:/app/static
     depends_on:
-      - backend
+      - projectwebsite1
     networks:
       - app-network
 
