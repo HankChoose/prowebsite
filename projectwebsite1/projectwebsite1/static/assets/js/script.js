@@ -17,7 +17,7 @@ jQuery(function ($) {
     });
 
     // Preloader
-    $("body").addClass("pre-loaded");
+    //$("body").addClass("pre-loaded");
 
     // Scrolltop
     $(window).on('scroll', function() {
@@ -30,6 +30,7 @@ jQuery(function ($) {
     });
 
     $("#scrolltop").on('click', function () {
+        //alert("zzz1");
         $("html").animate({
             scrollTop: 0
         }, 2000);

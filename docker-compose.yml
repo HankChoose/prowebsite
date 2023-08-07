@@ -25,16 +25,17 @@ services:
     image: mysql:latest
     restart: always
     environment:
-      MYSQL_DATABASE: mydatabase
-      MYSQL_USER: mydatabaseuser
-      MYSQL_PASSWORD: mydatabasepassword
-      MYSQL_ROOT_PASSWORD: myrootpassword
+      MYSQL_DATABASE: mydb
+      MYSQL_USER: myuser
+      MYSQL_PASSWORD: mypw
+      MYSQL_ROOT_PASSWORD: myrootpw
     ports:
       - "3306:3306"
     volumes:
       - dbdata:/var/lib/mysql
     networks:
       - app-network
+    command: ["sh", "-c", "sleep 10 && python manage.py migrate"]
       
   nginx:
     image: nginx

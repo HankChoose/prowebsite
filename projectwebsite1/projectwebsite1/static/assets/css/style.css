@@ -1165,6 +1165,7 @@ select.form-control {
           filter: blur(10px) contrast(20);
 }
 
+/*
 .blob-1, .blob-2 {
   width: 70px;
   height: 70px;
@@ -1189,6 +1190,7 @@ select.form-control {
           animation: osc-r 2.5s ease infinite;
   background: #4F5AC2;
 }
+*/
 
 @-webkit-keyframes osc-l {
   0% {
@@ -1681,6 +1683,10 @@ select.form-control {
   transition: all 0.3s linear;
   padding-top: 0;
   padding-bottom: 0;
+}
+
+.main-nav nav .navbar-nav .nav-item:hover{
+  background-color:#c7c3c34a;
 }
 
 .main-nav nav .navbar-nav .nav-item a {
@@ -4098,7 +4104,7 @@ select.form-control {
   -webkit-box-flex: 0;
       -ms-flex: 0 0 auto;
           flex: 0 0 auto;
-  width: 100px;
+  width: 120px;
   height: 80px;
   display: -webkit-box;
   display: -ms-flexbox;
